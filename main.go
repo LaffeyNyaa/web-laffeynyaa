@@ -1,7 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
+	"os"
 
 	"github.com/gin-gonic/gin"
 	"gorm.io/driver/postgres"
@@ -20,7 +22,8 @@ type Work struct {
 }
 
 func main() {
-	connStr := "host=www.laffeynyaa.com port=5432 user=postgres password=NewFertin233_ dbname=web_laffeynyaa"
+	pass := os.Getenv("POSTGRES_PASS")
+	connStr := fmt.Sprintf("host=www.laffeynyaa.com port=5432 user=postgres password=%s dbname=web_laffeynyaa", pass)
 	db, err := gorm.Open(postgres.Open(connStr), &gorm.Config{})
 	if err != nil {
 		panic("Failed to connect to the database: " + err.Error())
