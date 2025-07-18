@@ -35,8 +35,18 @@ func main() {
 	gin.SetMode(gin.ReleaseMode)
 	router := gin.Default()
 
-	router.LoadHTMLGlob("tmpls/*")
+	router.Use(func(c *gin.Context) {
+		c.Header("X-Content-Type-Options", "nosniff")
+		if len(c.Request.URL.Path) > 7 && c.Request.URL.Path[:7] == "/static" {
+			c.Header("Cache-Control", "max-age=31536000, immutable")
+		} else {
+			c.Header("Cache-Control", "no-cache")
+		}
+	})
+
 	router.Static("static", "static")
+
+	router.LoadHTMLGlob("tmpls/*")
 
 	router.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.tmpl", gin.H{})
