@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小拉菲喵的小网站</title>
+  <link rel="icon" type="image/webp" href="static/imgs/favicon.1.webp">
+  <link rel="stylesheet" type="text/css" href="static/styles/menu.1.css">
+  <link rel="stylesheet" type="text/css" href="static/styles/card.1.css">
+  <link rel="stylesheet" type="text/css" href="static/styles/footer.1.css">
+  <link rel="stylesheet" type="text/css" href="static/styles/body.1.css">
+  <script src="static/js/jump_to.1.js"></script>
+</head>
+
+<body>
+  <div class="nav">
+    <div class="container">
+      <div class="btn selected">主页{{.msg}}</div>
+      <div class="btn" onclick="jumpToURI('works')">作品</div>
+      <div class="btn" onclick="jumpToURI('https://space.bilibili.com/39354852')">哔哩哔哩</div>
+      <div class="btn" onclick="jumpToURI('https://github.com/LaffeyNyaa')">GitHub</div>
+    </div>
+  </div>
+
+  <p>此网站使用 Gin + PostgreSQL</p>
+  <div class="cardContainer">
+    <div class="card">
+      <img src="static/imgs/mutsu_pay.1.webp" alt="MUSTU支付" width="250" height="250" />
+      <div class="card__content">
+        <img src="static/imgs/soyo_pay.1.webp" alt="SOYO支付" width="250" height="250" />
+      </div>
+    </div>
+  </div>
+</body>
+
+<footer>
+  <a href="https://beiancx.miit.gov.cn">津ICP备2024026458号</a>
+</footer>
+
+</html>

@@ -1,0 +1,10 @@
+body {
+  background-image: url("../imgs/background.1.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+p {
+  color: white;
+}

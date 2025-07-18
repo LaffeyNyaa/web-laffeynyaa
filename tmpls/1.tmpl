@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小网站喵qwq</title>
+  <link rel="icon" type="image/webp" href="../static/imgs/favicon.1.webp">
+  <link rel="stylesheet" type="text/css" href="../static/styles/menu.1.css">
+  <link rel="stylesheet" type="text/css" href="../static/styles/footer.1.css">
+  <link rel="stylesheet" type="text/css" href="../static/styles/body.1.css">
+  <link rel="stylesheet" type="text/css" href="../static/styles/body_container.1.css">
+  <script src="../static/js/jump_to.1.js"></script>
+</head>
+
+<body>
+  <div class="nav">
+    <div class="container">
+      <div class="btn" onclick="jumpToURI('/')">主页</div>
+      <div class="btn selected" onclick="jumpToURI('../works')">作品</div>
+      <div class="btn" onclick="jumpToURI('https://space.bilibili.com/39354852')">哔哩哔哩</div>
+      <div class="btn" onclick="jumpToURI('https://github.com/LaffeyNyaa')">GitHub</div>
+    </div>
+  </div>
+  <div class="bodyContainer">
+    <p>{{.Content}}</p>
+  </div>
+  <footer>
+    <a href="https://beiancx.miit.gov.cn">津ICP备2024026458号</a>
+  </footer>
+</html>
