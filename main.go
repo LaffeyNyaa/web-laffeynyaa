@@ -23,6 +23,7 @@ type Work struct {
 
 func main() {
 	pass := os.Getenv("POSTGRES_PASS")
+	certPath := os.Getenv("CERT_PATH")
 	connStr := fmt.Sprintf("host=localhost port=5432 user=postgres password=%s dbname=web_laffeynyaa", pass)
 	db, err := gorm.Open(postgres.Open(connStr), &gorm.Config{})
 	if err != nil {
@@ -71,5 +72,5 @@ func main() {
 		})
 	})
 
-	router.Run(":80")
+	router.RunTLS(":443", certPath+"/laffeynyaa.com.pem", certPath+"/laffeynyaa.com.key")
 }
