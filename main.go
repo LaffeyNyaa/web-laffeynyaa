@@ -34,6 +34,17 @@ func main() {
 	db.Find(&works)
 
 	gin.SetMode(gin.ReleaseMode)
+
+	go func() {
+		httpRouter := gin.Default()
+
+		httpRouter.Use(func(c *gin.Context) {
+			c.Redirect(http.StatusMovedPermanently, "https://"+c.Request.Host+c.Request.RequestURI)
+		})
+
+		httpRouter.Run(":80")
+	}()
+
 	router := gin.Default()
 
 	router.Use(func(c *gin.Context) {
